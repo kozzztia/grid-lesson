@@ -1,0 +1,124 @@
+:root {
+    --bg-color: #eee;
+    --gallery-bg-color: #fff;
+    --gallery-max-width: 1440px;
+    --text-color: #000;
+    --title-font-family: Delius Unicase;
+    --text-font-family: Roboto;
+    --radius: 20px;
+    --transition: .5s;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--main-bg-color);
+    font-family: var(--text-font-family), sans-serif;
+}
+
+
+.gallery {
+    max-width: var(--gallery-max-width);
+    margin: 0 auto;
+    background: var(--gallery-bg-color);
+    padding: 100px;
+
+    h2 {
+        font-family: var(--title-font-family), sans-serif;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 45.07px;
+        letter-spacing: 0.05em;
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+        display: grid;
+        gap: 30px;
+    }
+    li{
+        transition: var(--transition);
+        opacity: .7;
+        padding: 10px;
+        height: auto;;
+        position: relative;
+        cursor: pointer;
+    }
+    li:hover{
+        opacity: 1;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: var(--radius);
+        overflow: hidden;
+    }
+}
+
+.cities-gallery{
+    ul{
+        /* overflow: hidden; */
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        :nth-child(1){
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        :nth-child(2){
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        :nth-child(3){
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        :nth-child(4){
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        :nth-child(5){
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        :last-child{
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+    }
+}
+
+.nature-gallery{
+    ul{
+        background: yellow;
+        padding: 10px;
+        
+    }
+
+}
+
+.people-gallery{
+    ul{
+        background: green;
+        padding: 10px;
+    }
+
+}
