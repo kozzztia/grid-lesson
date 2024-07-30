@@ -47,9 +47,14 @@ body {
         height: auto;;
         position: relative;
         cursor: pointer;
+        transform: scale(1);
+        z-index: inherit;
+
     }
     li:hover{
+        transform: scale(1.2);
         opacity: 1;
+        z-index: 100;
     }
     img{
         width: 100%;
@@ -109,8 +114,8 @@ body {
 .nature-gallery{
     ul{
         background: yellow;
-        padding: 10px;
-        
+        padding: 10px; 
+
     }
 
 }
