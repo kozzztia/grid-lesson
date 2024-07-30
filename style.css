@@ -17,7 +17,7 @@
 }
 
 body {
-    background: var(--main-bg-color);
+    background: var(--bg-color);
     font-family: var(--text-font-family), sans-serif;
 }
 
@@ -40,6 +40,7 @@ body {
         list-style: none;
         display: grid;
         gap: 30px;
+        padding: var(--gallery-padding);
     }
     li{
         overflow: hidden;
@@ -58,7 +59,7 @@ body {
     }
     li:hover{
         transition: var(--transition);
-        transform: scale(1.2);
+        transform: scale(1.1);
         opacity: 1;
         z-index: 100;
     }
@@ -74,10 +75,8 @@ body {
 
 .cities-gallery{
     ul{
-        padding: var(--gallery-padding);
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
-
         :nth-child(1){
             grid-column-start: 1;
             grid-column-end: 2;
@@ -119,9 +118,8 @@ body {
 
 .nature-gallery{
     ul{
-        padding: var(--gallery-padding);
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
     .small-first{
         grid-column: 1;
@@ -152,7 +150,41 @@ body {
 
 .people-gallery{
     ul{
-        padding: var(--gallery-padding);
+        grid-template-areas:"a b c"
+                            "d b e"
+                            "f g e"
+                            "f h h"
+                            "i i j";
+        :first-child{
+            grid-area: a;
+        }
+        :nth-child(2){
+            grid-area: b;
+        }
+        :nth-child(3){
+            grid-area: c;
+        }
+        :nth-child(4){
+            grid-area: d;
+        }
+        :nth-child(5){
+            grid-area: e;
+        }
+        :nth-child(6){
+            grid-area: f;
+        }
+        :nth-child(7){
+            grid-area: g;
+        }
+        :nth-child(8){
+            grid-area: h;
+        }
+        :nth-child(9){
+            grid-area: i;
+        }
+        :last-child{
+            grid-area: j;
+        }
     }
 
 }
