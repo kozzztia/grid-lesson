@@ -245,8 +245,10 @@ body {
             background-repeat: no-repeat;
             background-position: center;
             object-fit: contain;
+            transform: scale(1);
             &:hover{
                 opacity: 1;
+                transform: scale(1.1);
             }
             &:nth-child(1){
                 top: 20px;
